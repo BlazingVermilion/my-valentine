@@ -13,7 +13,6 @@ document.body.addEventListener("click", () => {
   }
 },{once:true});
 
-/* preload function */
 function preloadImage(src){
   const img = new Image();
   img.src = src;
@@ -38,6 +37,9 @@ document.body.addEventListener("click", () => {
   gif.style.opacity = 0;
 
   setTimeout(()=>{
+
+    /* remove intro sau click đầu */
+    text.classList.remove("intro");
 
     preloadImage(lines[index].gif);
 

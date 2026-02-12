@@ -12,29 +12,15 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-
   background:
     linear-gradient(rgba(60,0,20,0.6),rgba(60,0,20,0.6)),
     url("../assets/images/background.jpg");
-
   background-size:cover;
   background-position:center;
-  background-repeat:no-repeat;
-
   font-family:'Dancing Script',cursive;
   color:#f8e1e7;
   text-align:center;
   overflow:hidden;
-}
-
-body::before{
-  content:"";
-  position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle,rgba(179,0,45,0.3),transparent 70%);
-  filter:blur(120px);
-  z-index:-1;
 }
 
 .container{
@@ -42,18 +28,12 @@ body::before{
   z-index:2;
 }
 
-.intro{
-  font-size:60px !important;
+#text.intro{
+  font-size:60px;
   letter-spacing:2px;
 }
 
-#text{
-  font-size:30px;
-  line-height:1.6;
-  max-width:900px;
-  transition:opacity .8s ease, transform .8s ease;
-  margin:auto;
-}
+#text { font-size: 35px; line-height: 1.6; max-width: 2000px; transition: opacity 0.8s ease; padding: 0 20px; margin: auto; }
 
 #buttons{
   margin-top:30px;
@@ -66,7 +46,6 @@ button{
   border:none;
   cursor:pointer;
   margin:10px;
-  transition:.3s;
 }
 
 #yesBtn{
@@ -80,39 +59,30 @@ button{
 }
 
 .hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
+  display:none;
 }
 
 .gif{
   margin-top:20px;
   max-width:300px;
   opacity:0;
-  visibility:hidden;
   transition:opacity .8s ease;
 }
 
 /* MOBILE */
-@media(max-width:768px){
-
-  .intro{
-    font-size:34px !important;
-  }
+@media (max-width:768px){
 
   #text{
-    font-size:18px;
-    padding:0 20px;
+    font-size:20px;
+    line-height: 1.6; word-wrap: break-word; /* ngắt dòng nếu quá dài */ overflow-wrap: break-word; max-width: 100%;
+  }
+
+  #text.intro{
+    font-size:22px;
   }
 
   .gif{
-    max-width:220px;
-  }
-
-  #buttons{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    max-width:85%;
   }
 
 }
