@@ -33,22 +33,31 @@ document.body.addEventListener("click", () => {
 
   if(index >= lines.length) return;
 
+  // FADE OUT
   text.style.opacity = 0;
   gif.style.opacity = 0;
 
   setTimeout(()=>{
-
     /* remove intro sau click đầu */
     text.classList.remove("intro");
+    // ẨN HẲN để không repaint frame cũ
+    text.style.visibility = "hidden";
+    gif.style.visibility = "hidden";
 
-    preloadImage(lines[index].gif);
-
+    // ĐỔI NỘI DUNG KHI ĐANG ẨN
     text.innerHTML = lines[index].text;
     gif.src = lines[index].gif;
 
+    // FORCE REFLOW (cực quan trọng)
+    void text.offsetWidth;
+
+    // HIỆN LẠI
+    text.style.visibility = "visible";
     gif.style.visibility = "visible";
-    gif.style.opacity = 1;
+
+    // FADE IN
     text.style.opacity = 1;
+    gif.style.opacity = 1;
 
     index++;
 
