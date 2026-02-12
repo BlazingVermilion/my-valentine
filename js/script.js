@@ -3,6 +3,13 @@ const buttons = document.getElementById("buttons");
 const gif = document.getElementById("gif");
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
+const bgm = document.getElementById("bgm");
+
+window.addEventListener("load", () => {
+  bgm.muted = false;
+  bgm.play().catch(() => {});
+});
+
 
 const lines = [
   {
