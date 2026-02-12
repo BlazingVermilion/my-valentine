@@ -5,10 +5,12 @@ const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const bgm = document.getElementById("bgm");
 
-window.addEventListener("load", () => {
-  bgm.muted = false;
-  bgm.play().catch(() => {});
-});
+document.body.addEventListener("click", () => {
+  if (bgm.muted) {
+    bgm.muted = false;
+    bgm.play().catch(()=>{});
+  }
+}, { once: true });
 
 
 const lines = [
